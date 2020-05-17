@@ -7,7 +7,7 @@
 # {{.rname}}
 
 This is a makefile based static website generator.  Files are authored in the
-"src" subdirectory using a standard text editor with markdown or html a
+"src" subdirectory using a standard text editor to enter markdown or html as
 desired.  A template processor is also used which enables standard page header,
 footers, and other common information across various web pages.
 
@@ -38,6 +38,16 @@ not mirrored into the "bld" folder because it only contains igot files.  Since
 igot files are by definition only included in other got files they do not
 create content on their own and as such the inc folder does not need to be
 created in the corresponding "bld" directory.
+
+The .got file format is described in detail on the [pgot]({{.repUrl}}pgot)
+repository page.  In essence it consists of JSON frontmatter bounded by triple
+semicolons (;;;), followed by template content.  In addition you can designate
+sections of the template content as markdown by bounding them with '|||md+' on a
+line by itself followed by '|||md-' on its own line.  These can encompass the
+whole template section or alternately can be repeated multiple times within the
+template for sub sections of markdown.  Anything not within markdown boundary
+markers is considered standard html.  An example .got source file can be seen
+[here](src/post/nulla_porttitor_tellus/index.got).
 
 Once files have been authored, these are mirrored and transformed into final
 html in the "bld" subdirectory.  The user can make a local version using the
@@ -114,24 +124,47 @@ you can browse with your default web browser.
 
 ## Folder structure
 
-This can be created as desired.  One recommended folder layout is as follows:
+The folder structure can be customized as desired.  The example layout is as
+follows:
 
 ```text
-+- Makefile
-+- src : All templates and source text files are in this folder.
-|  +- css : html cascading style sheets
-|  +- inc : These are .igot templates that are included or referenced by
-|           individual content pages in src.  Global variables can be defined
-|           here etc.
-|  +- topic1 : Website topics are stored in different sub folders.
-|  +- topic2 : etc. ...
-+- bld : All output is written to this folder.
-|  +- loc : This folder is generated with "make loc", and can be viewed with
-|           a standard web browser.
-|  +- pub : This folder contains files which are intended for the public web
-|           server.  These files can be directly copied to the server.
-+- template : You can safely ignore this folder unless you want to update the
-              README or LICENSE files.  Further detail is in the folder.
+|-Makefile
+|-bld
+|  |-loc
+|  |-pub
+|-src
+|  |-css
+|  |-favicon.svg.cpy
+|  |-inc
+|  |-index.got
+|  |-post
+|  |  |-mauris_elementum
+|  |  |  |-computer.svg.cpy
+|  |  |  |-index.got
+|  |  |-nulla_porttitor_tellus
+|  |  |  |-elephant.svg.cpy
+|  |  |  |-index.got
+|  |  |-pellentesque
+|  |  |  |-index.got
+|  |  |  |-rhino.svg.cpy
+|  |-topic
+|  |  |-index.got
+|-template
+
+bld      : All generated output is written to this folder.
+loc      : This folder content is created with "make loc", and can be viewed
+           with a standard web browser.
+pub      : This folder contains files which are intended for the public web
+           server.  These files can be directly copied to the server.
+src      : All templates and source text files are in this folder.
+css      : html cascading style sheets are stored here.
+inc      : These are .igot templates that are included or referenced by
+           individual content pages in src.  Global variables can be defined
+           here etc.
+post     : Place posts here.  Majority of content is in this folder.
+topic    : A categorized index of posts.
+template : You can safely ignore this folder unless you want to update the
+           README or LICENSE files.  Further detail is in the folder.
 ```
 
 ## Cogit
