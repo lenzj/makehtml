@@ -1,0 +1,54 @@
+;;;
+{
+"pgotInclude" : [ "globalPage.igot" ],
+"title" : "Pellentesque eleifend",
+"description" : "Nulla feugiat arcu in ante.",
+"cdate" : "2020-05-20",
+"category" : "efficitur",
+"tag" : "commodo,lectus"
+}
+;;;
+{{template "pageBegin" . -}}
+|||md+
+Aliquam pharetra lectus magna, at cursus ante dapibus in. Sed et nisl elit.
+Quisque vitae hendrerit arcu, ac maximus lacus. Aenean vel ligula dictum sapien
+semper scelerisque. Donec cursus nec augue ut venenatis. Vivamus consectetur
+velit ut tempus interdum. Donec suscipit lacus mauris, vitae molestie tortor
+dignissim vel. Maecenas nunc felis, pharetra sed sem non, viverra semper lectus.
+Nulla vestibulum mi eu lobortis suscipit. Vestibulum vitae dolor ornare,
+vulputate est eget, vehicula quam. Nam neque nisl, auctor at efficitur eu,
+auctor interdum enim. Proin volutpat posuere sapien sit amet dignissim. Sed nec
+ante feugiat, mattis quam ut, congue purus. Nunc condimentum ipsum vitae iaculis
+egestas.
+
+![](rhino.svg "rhino")
+
+1. Praesent eu velit at nibh luctus mollis vitae mollis purus. Etiam justo lectus,
+egestas a lacinia sit amet, aliquam at nulla. Curabitur scelerisque urna vel.
+
+2. Duis faucibus dui eget augue pellentesque, eget finibus ex vestibulum. Duis in
+ornare ex, vitae faucibus eros. Donec ornare metus sed purus interdum laoreet.
+
+3. Nulla semper, odio quis sodales posuere, diam turpis accumsan est, vel ultricies
+mauris nisi ut felis. In porta pharetra facilisis. Lorem ipsum dolor sit amet,
+consectetur adipiscing elit. Pellentesque pellentesque nisl enim, eget volutpat
+nisi aliquet vitae. Donec eget mi libero. Nullam lectus odio, congue eget urna.
+
+Nam aliquet eros sit amet odio vestibulum, nec lacinia metus pharetra. Phasellus
+et tellus suscipit, hendrerit arcu non, blandit enim. In sed lacinia turpis.
+Maecenas aliquam commodo massa ut vestibulum. Mauris fringilla malesuada dictum.
+Praesent ultrices vel eros id dictum. Cras non ligula eu diam fringilla tempus
+eu id arcu. Sed nulla odio, placerat vitae tempor ornare, condimentum sit amet
+ligula. Duis porta tortor fringilla dictum vehicula. Mauris vel ultricies metus.
+Fusce lacinia orci mollis, pretium ipsum et, posuere arcu. Nulla venenatis purus
+eu tortor aliquet, eu malesuada mauris congue. Donec eu ligula sit amet nunc
+pulvinar scelerisque in vel orci.
+
+## References:
+
+<https://lipsum.com>
+
+<https://commons.wikimedia.org/wiki/File:Rhino.svg>
+|||md-
+{{template "pageEnd" . -}}
+{{- /* vim:set noet tw=80: */ -}}

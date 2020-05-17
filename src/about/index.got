@@ -1,0 +1,36 @@
+;;;
+{
+"pgotInclude" : [ "globalPage.igot" ],
+"title" : "About",
+"description" : "Some things about me and this website.",
+"cdate" : "2020-05-14",
+"tag" : "about"
+}
+;;;
+{{template "pageBegin" . -}}
+|||md+
+![](profile.png =200x "profile picture")
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa
+ante, rhoncus sit amet dolor sit amet, vehicula sagittis quam. In ac neque
+suscipit, elementum sem sit amet, faucibus nibh. Curabitur tincidunt nulla
+tincidunt eros dignissim semper. Etiam eget ante non nisi scelerisque tristique
+eget ac ipsum. Nullam feugiat at est quis faucibus. Ut posuere finibus elit quis
+lacinia. Aenean auctor hendrerit massa, at rhoncus nisl tristique cursus. Ut
+venenatis aliquet diam, a pharetra ex facilisis at. Proin ultrices libero id
+risus ultricies pretium.
+
+Ut feugiat mauris et libero cursus ornare. Vivamus ante diam, pulvinar sit amet
+massa ut, ullamcorper sagittis neque. Pellentesque facilisis accumsan risus id
+tempor. Integer tincidunt libero in justo pulvinar, non volutpat elit viverra.
+Aliquam nec leo pharetra, accumsan nibh eu, dapibus elit. Ut rhoncus, nisi ut
+maximus facilisis, lacus sem dignissim ex, sit amet euismod dolor elit id magna.
+Curabitur ipsum mauris, varius vel semper eu, volutpat et nisi. Integer ex dui,
+dapibus vitae fermentum tristique, mattis vitae nisi. Mauris eget ante vel
+mauris molestie luctus. Etiam iaculis ex at mauris pharetra, ac elementum dui
+euismod. Nulla facilisi. Integer tincidunt varius erat eu viverra. Duis
+fermentum urna sit amet magna condimentum eleifend. Nulla ut ante semper,
+finibus nulla tristique, finibus justo.
+|||md-
+{{template "pageEnd" . -}}
+{{- /* vim:set noet tw=80: */ -}}

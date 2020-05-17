@@ -1,0 +1,60 @@
+;;;
+{
+  "pgotInclude" : [ "globalPage.igot" ],
+  "title" : "Topics",
+  "description" : "Content on this website listed by category, tag, date.",
+  "cdate" : "2020-05-20",
+  "posts": [
+    { "title": "Pellentesque eleifend",
+      "path":  "post/pellentesque"
+    },
+    { "title": "Mauris elementum eros a justo",
+      "path":  "post/mauris_elementum"
+    },
+    { "title": "Nulla porttitor tellus ut leo",
+      "path":  "post/nulla_porttitor_tellus"
+    }
+   ],
+  "topics" : [
+      { "name": "By Category",
+        "item": [
+          { "name": "efficitur", "postnum": [ 0, 2 ] },
+          { "name": "porta",     "postnum": [ 1 ] }
+        ]
+      },
+      { "name": "By Tag",
+        "item": [
+          { "name": "commodo",   "postnum": [ 0, 2 ] },
+          { "name": "lectus",    "postnum": [ 0 ] },
+          { "name": "turpis",    "postnum": [ 1, 2 ] }
+        ]
+      },
+      { "name": "By Date",
+        "item": [
+          { "name": "2020",      "postnum": [ 0 ] },
+          { "name": "2019",      "postnum": [ 1 ] },
+          { "name": "2018",      "postnum": [ 2 ] }
+        ]
+      }
+  ]
+}
+;;;
+{{template "pageBegin" . -}}
+<p></p>
+{{range .topics -}}
+<h3>{{.name}}</h3>
+{{range .item -}}
+<b>{{.name}}</b>
+	<ul><li>
+	{{range .postnum -}}
+	{{$i := toInt . -}}
+	<a href="{{$.siteurl}}/{{index $.posts $i "path"}}/{{$.dfile}}">
+	{{index $.posts $i "title" -}}</a>, 
+	{{end -}}
+	</li></ul>
+{{end -}}
+<hr>
+{{end -}}
+<p></p>
+{{template "pageEnd" . -}}
+{{- /* vim:set noet tw=80: */ -}}

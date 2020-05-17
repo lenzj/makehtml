@@ -1,0 +1,63 @@
+;;;
+{
+"pgotInclude" : [ "globalPage.igot" ],
+"title" : "Mauris elementum eros a justo",
+"description" : "maecenas sodales augue id pulvinar.",
+"cdate" : "2019-11-03",
+"category" : "porta",
+"tag" : "turpis"
+}
+;;;
+{{template "pageBegin" . -}}
+|||md+
+## Lorem ipsum dolor
+
+Sit amet, consectetur adipiscing elit. Vivamus eu malesuada augue, vehicula
+bibendum quam. Duis sit amet varius quam. Pellentesque ut quam ipsum. Etiam
+tortor massa, tempus a semper ac, mattis eget risus. Cras nec malesuada ipsum.
+Vivamus semper dui sit amet tristique consectetur. Nam quis mi volutpat, aliquam
+augue ut, varius arcu. Maecenas tempor accumsan metus id rhoncus. In
+sollicitudin purus ut urna aliquet, ac vehicula nulla faucibus.  Phasellus
+mollis faucibus nibh sit amet sagittis.
+
+	// Parse command line
+	flag.Usage = func() {
+	  fmt.Fprintf(flag.CommandLine.Output(),
+	    "Usage: %s [OPTION]... [FILE]...\n"+
+	    "Process a got (golang template) file and send transformed text to output.\n"+
+	    "Options:\n", appName)
+	  flag.PrintDefaults()
+	}
+	var oflag = flag.String("o", "-", "output `file` path")
+	var iflag = flag.String("i", "", "colon separated list of `paths` to search with pgotInclude")
+	var dflag = flag.String("d", "", "string of json frontmatter to include")
+	var vflag = flag.Bool("v", false, "display "+appName+" version")
+
+##Maecenas mollis
+
+Egestas tincidunt. Sed id pellentesque est. Phasellus viverra, risus nec gravida
+consectetur, ex lorem molestie orci, nec feugiat mi purus at libero. Praesent
+elit elit, facilisis eget molestie sit amet, venenatis id nunc.  Proin ut neque
+nec diam finibus laoreet vitae sit amet metus. Donec vel dui vel leo condimentum
+aliquet. Nunc quis neque vitae enim interdum tempus.
+
+![](computer.svg "computer")
+
+Cras vel porttitor nibh. Nulla condimentum sit amet mi sit amet mattis. In id
+neque commodo, mattis nibh non, hendrerit augue. Curabitur sed placerat odio,
+quis molestie mauris. Curabitur ac sodales est. Cras sodales mi risus, sed
+sodales tellus fringilla ut. Fusce odio mi, viverra sit amet faucibus sed,
+iaculis nec lectus. Nulla a erat ut urna lobortis fringilla ac ac nibh.
+Vestibulum dictum sapien porttitor tellus imperdiet, ornare feugiat est
+ultrices. Fusce enim nulla, ornare a blandit ut, iaculis vitae augue. Mauris
+eget erat odio. Fusce vel pulvinar nisi, sed facilisis tellus. Etiam malesuada
+urna sed nulla tempor pellentesque.
+
+## References:
+
+<https://lipsum.com>
+
+<https://commons.wikimedia.org/wiki/File:Computer_Turned_On.svg>
+|||md-
+{{template "pageEnd" . -}}
+{{- /* vim:set noet tw=80: */ -}}

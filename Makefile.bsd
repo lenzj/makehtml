@@ -1,0 +1,83 @@
+.SUFFIXES:
+
+MYSERVER=my.blog.site
+
+PGOT-LOC=pgot -i ":src/inc" -d '{"siteurl":"$(.CURDIR)/bld/loc","dfile":"index.html"}'
+PGOT-PUB=pgot -i ":src/inc" -d '{"siteurl":"https://$(MYSERVER)","dfile":""}'
+CHUF=chuf '|||md+' '|||md-' markdown
+
+INC!=find src -type f -name '*.igot'
+GOTS!=find src -type f -name '*.got'
+GOTL:=$(GOTS:src/%.got=bld/loc/%.html)
+GOTP:=$(GOTS:src/%.got=bld/pub/%.html)
+RAWS!=find -L src -type f -name '*.raw'
+RAWL:=$(RAWS:src/%.raw=bld/loc/%)
+RAWP:=$(RAWS:src/%.raw=bld/pub/%)
+CPYS!=find -L src -type f -name '*.cpy'
+CPYL:=$(CPYS:src/%.cpy=bld/loc/%)
+CPYP:=$(CPYS:src/%.cpy=bld/pub/%)
+
+all loc: $(RAWL) $(CPYL) $(GOTL)
+
+
+pub: $(RAWP) $(CPYP) $(GOTP)
+
+$(RAWL): $(@:bld/loc/%=src/%.raw)
+	@mkdir -p $(@D)
+	@echo "raw  -> $@"
+	@cp $? $@
+
+$(RAWP): $(@:bld/pub/%=src/%.raw)
+	@mkdir -p $(@D)
+	@echo "raw  -> $@"
+	@cp $? $@
+
+$(CPYL): $(@:bld/loc/%=src/%.cpy)
+	@mkdir -p $(@D)
+	@echo "cpy  -> $@"
+	@cp $? $@
+
+$(CPYP): $(@:bld/pub/%=src/%.cpy)
+	@mkdir -p $(@D)
+	@echo "cpy  -> $@"
+	@cp $? $@
+
+$(GOTL): $(@:bld/loc/%.html=src/%.got) $(INC)
+	@mkdir -p $(@D)
+	@echo "got  -> $@"
+	@$(PGOT-LOC) $? | $(CHUF) > $@
+
+$(GOTP): $(@:bld/pub/%.html=src/%.got) $(INC)
+	@mkdir -p $(@D)
+	@echo "pgot -> $@"
+	@$(PGOT-PUB) $? | $(CHUF) > $@
+
+cogit: bld/cogit.tar cogit-files.txt
+	@ echo "Moving cogit tarball to release folder"
+	mkdir -p ../makeht-release
+	mv bld/cogit.tar ../makeht-release/makeht-cogit-$(shell date +"%Y-%m-%d").tar
+
+CGTMP=cg.tmp
+CGSRT=cgsrt.tmp
+
+bld/cogit.tar: $(CGSRT)
+	@mkdir -p $(@D)
+	@echo "generating $@"
+	@tar -T $< -cf $@ 
+
+cogit-files.txt: $(CGSRT)
+	@echo "generating $@"
+	@while read CGFILE; do sha256sum -b "$$CGFILE"; done < $< > $@
+
+$(CGSRT): $(RAW)
+	@find src -type f -name '*.raw' > $(CGTMP)
+	@sort < $(CGTMP) > $@
+	@rm -f $(CGTMP)
+
+clean:
+	rm -Rf bld *.tmp
+
+lint: loc
+	@grep -n -r '<no value>' bld/loc/ || true
+
+.PHONY: all loc pub clean lint

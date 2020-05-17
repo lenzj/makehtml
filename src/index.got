@@ -1,0 +1,55 @@
+;;;
+{
+"pgotInclude" : [ "globalPage.igot" ],
+"title" : "MyBlog",
+"description" : "Thoughts and projects relating to x, y, z.",
+"cdate" : "2020-05-20",
+"posts" : [
+  { "title":       "Pellentesque eleifend",
+    "path":        "post/pellentesque",
+    "thumb":       "rhino.svg",
+    "description": "Nulla feugiat arcu in ante.",
+    "date":        "2020-05-20",
+    "category":    "efficitur",
+    "tag":         "commodo,lectus"
+  },
+  { "title":       "Mauris elementum eros a justo",
+    "path":        "post/mauris_elementum",
+    "thumb":       "computer.svg",
+    "description": "Maecenas sodales augue id pulvinar.",
+    "date":        "2019-11-03",
+    "category":    "porta",
+    "tag":         "turpis"
+  },
+  { "title":       "Nulla porttitor tellus ut leo",
+    "path":        "post/nulla_porttitor_tellus",
+    "thumb":       "elephant.svg",
+    "description": "Duis justo tortor, consequat a.",
+    "date":        "2018-08-24",
+    "category":    "efficitur",
+    "tag":         "commodo,turpis"
+  }
+]
+}
+;;;
+{{template "pageBegin" . -}}
+<p></p>
+<table>
+{{range .posts -}}
+<tr>
+<td>
+	<a href="{{.path}}/{{$.dfile}}">
+	<img src="{{.path}}/{{.thumb}}" width="80"></a>
+</td>
+<td>
+	<a href="{{.path}}/{{$.dfile}}">
+	<p><b>{{.title}}</b></p></a>
+	<p><i>{{.date}}</i> - {{.description}}</p>
+	<p><i>cat:</i>{{.category}} - <i>tag:</i>{{.tag}}</p>
+</td>
+</tr>
+{{end -}}
+</table>
+<p></p>
+{{template "pageEnd" . -}}
+{{- /* vim:set noet tw=80: */ -}}

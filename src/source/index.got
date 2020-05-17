@@ -1,0 +1,38 @@
+;;;
+{
+"pgotInclude" : [ "globalPage.igot" ],
+"title" : "Source",
+"description" : "Repository of open source code and assets.",
+"cdate" : "2020-05-09"
+}
+;;;
+{{template "pageBegin" . -}}
+|||md+
+Open source code associated with this site can be obtained from the source code
+repository at:
+
+<{{.giturl}}>
+
+The following are some highlighted projects from the repository.
+
+## [Project 1 Name]({{.giturl}}/project1)
+
+Aliquam erat volutpat. Maecenas et lacus augue. Nunc vulputate, est eget
+consequat imperdiet, tellus orci pharetra leo, a consequat nibh tortor quis
+elit. Aenean egestas ante sapien, nec mattis dui faucibus et. Duis ac volutpat
+enim. Sed volutpat elit sit amet eros iaculis maximus eu id ex. Aenean sem
+nulla, porta eu egestas nec, ullamcorper sed velit. In hac habitasse platea
+dictumst. Proin et metus quis ligula placerat sodales. Duis eu posuere massa, id
+tincidunt sem. Nam volutpat urna id bibendum scelerisque. Donec cursus erat eu
+massa scelerisque dignissim.
+
+## [Project 2 Name]({{.giturl}}/project2)
+
+Mauris et arcu ultrices, cursus justo at, fringilla purus. Fusce et dignissim
+erat. Pellentesque semper nunc velit, in aliquam est fringilla id. Cras
+tincidunt sit amet enim ut tempor. Pellentesque risus purus, interdum vitae
+consectetur quis, imperdiet vitae leo. Morbi auctor ligula vitae porta eleifend.
+Sed rutrum ex eget nunc viverra auctor.
+|||md-
+{{template "pageEnd" . -}}
+{{- /* vim:set noet tw=80: */ -}}

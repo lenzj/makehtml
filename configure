@@ -1,0 +1,16 @@
+#!/bin/sh
+echo -n "Setting up Makefile"
+case $(uname | tr '[:upper:]' '[:lower:]') in
+  linux*)
+    echo " for Linux"
+    cp Makefile.gnu Makefile
+    ;;
+  openbsd*)
+    echo " for OpenBSD"
+    cp Makefile.bsd Makefile
+    ;;
+  *)
+    echo " ... Failed! Unknown OS!"
+    exit 1
+    ;;
+esac

@@ -1,0 +1,9 @@
+;;;
+{
+"pgotInclude":[
+	"global.igot",
+	"pageBegin.igot",
+	"pageEnd.igot"
+	]
+}
+;;;
