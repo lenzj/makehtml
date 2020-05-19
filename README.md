@@ -1,4 +1,4 @@
-# makeht
+# makehtml
 
 This is a makefile based static website generator.  Files are authored in the
 "src" subdirectory using a standard text editor to enter markdown or html as
@@ -66,15 +66,15 @@ To install, clone the git repository and ensure you have the
 [dependencies](#dependencies) in the section below installed.
 
 In addition you will need to download the latest "cogit" file set from the
-[release](https://git.lenzplace.org/lenzj/makeht/releases) folder.  This is a tar archive containing
+[release](https://git.lenzplace.org/lenzj/makehtml/releases) folder.  This is a tar archive containing
 any images or video etc. used by this website.  See the [cogit](#cogit) section
-below for more background info.  There is currently only one file in the makeht
+below for more background info.  There is currently only one file in the makehtml
 cogit archive, and it is mainly included to demonstrate the cogit method.  From
 within the main git repository you can then extract the tar archive as follows
 (assuming the downloaded cogit tar archive is in your ~/Download folder) and it
 will populate the cogit files into the "src" directory.
 
-    $ tar -xf ~/Download/makeht-cogit-20XX-XX-XX.tar
+    $ tar -xf ~/Download/makehtml-cogit-20XX-XX-XX.tar
 
 You should then execute the configure script which selects the appropriate
 Makefile version depending on which operating system you are using (linux or
@@ -186,7 +186,7 @@ me is by following the instructions in the link below.  Thank you!
 ## Versioning
 
 I follow the [SemVer](http://semver.org/) strategy for versioning. The latest
-version is listed in the [releases](/lenzj/makeht/releases) section. 
+version is listed in the [releases](/lenzj/makehtml/releases) section. 
 
 ## License
 

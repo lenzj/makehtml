@@ -1,6 +1,6 @@
 ;;;
 {
-  "rname":"makeht",
+  "rname":"makehtml",
   "pgotInclude": [ "README.src/all.got" ]
 }
 ;;;
@@ -72,9 +72,9 @@ To install, clone the git repository and ensure you have the
 [dependencies](#dependencies) in the section below installed.
 
 In addition you will need to download the latest "cogit" file set from the
-[release]({{.repUrl}}makeht/releases) folder.  This is a tar archive containing
+[release]({{.repUrl}}{{.rname}}/releases) folder.  This is a tar archive containing
 any images or video etc. used by this website.  See the [cogit](#cogit) section
-below for more background info.  There is currently only one file in the makeht
+below for more background info.  There is currently only one file in the {{.rname}}
 cogit archive, and it is mainly included to demonstrate the cogit method.  From
 within the main git repository you can then extract the tar archive as follows
 (assuming the downloaded cogit tar archive is in your ~/Download folder) and it

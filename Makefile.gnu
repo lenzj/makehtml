@@ -41,8 +41,8 @@ bld/pub/%.html: src/%.got $(INC)
 
 cogit: bld/cogit.tar cogit-files.txt
 	@ echo "Moving cogit tarball to release folder"
-	mkdir -p ../makeht-release
-	mv bld/cogit.tar ../makeht-release/makeht-cogit-$(shell date +"%Y-%m-%d").tar
+	mkdir -p ../makehtml-release
+	mv bld/cogit.tar ../makehtml-release/makehtml-cogit-$(shell date +"%Y-%m-%d").tar
 
 CGTMP=cg.tmp
 CGSRT=cgsrt.tmp

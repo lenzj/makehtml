@@ -2,7 +2,7 @@
 ;;;
 	<footer>
 	<p>
-	<span style="float:left;">Made with <a href="https://git.lenzplace.org/lenzj/makeht">makeht</a></span>
+	<span style="float:left;">Made with <a href="https://git.lenzplace.org/makehtml">makehtml</a></span>
 	<span style="float:right;"><a href="{{.siteurl}}/copyright/{{.dfile}}">Copyright</a> &copy; {{.copyright}} {{.author}}</span>
 	</p>
 	</footer>
